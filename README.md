@@ -1,5 +1,5 @@
 # IOS_project_kbtu
-##IOS Application Development. KBTU course. Teachers: Bukenov Samat, Dias Ermekbayev.
+## IOS Application Development. KBTU course. Teachers: Bukenov Samat, Dias Ermekbayev.
 
 ### Project idea: Cards holder app. Loyalty app.
 
