@@ -1,0 +1,6 @@
+framework module Pods_gnezdo {
+  umbrella header "Pods-gnezdo-umbrella.h"
+
+  export *
+  module * { export * }
+}
