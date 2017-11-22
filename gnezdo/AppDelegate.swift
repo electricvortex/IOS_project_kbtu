@@ -16,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = HomeViewController()
+        window!.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        UINavigationBar.appearance().barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)]
         window!.makeKeyAndVisible()
         return true
     }
