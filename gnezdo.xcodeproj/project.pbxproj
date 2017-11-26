@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3F3C0CCE9404419506EC93A2 /* Pods_gnezdo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4D26C179D2174B6BB6C8C8 /* Pods_gnezdo.framework */; };
+		F52ECB531FC6D88800935D3A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECB521FC6D88800935D3A /* ModalViewController.swift */; };
 		F532CA0A1FC432F10017D467 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F532CA091FC432F10017D467 /* NewsTableViewCell.swift */; };
 		F532CA0C1FC43ADF0017D467 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F532CA0B1FC43ADF0017D467 /* HomeViewController.swift */; };
 		F532CA0E1FC43B210017D467 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F532CA0D1FC43B210017D467 /* NewsTableViewController.swift */; };
+		F5496FCA1FCB1CB40020FC10 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5496FC91FCB1CB40020FC10 /* ProfileViewController.swift */; };
 		F5532A5F1FC1F9DA004C66F9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5532A5E1FC1F9DA004C66F9 /* SignUpViewController.swift */; };
 		F56E639A1FC3E0B200D87D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56E63991FC3E0B200D87D93 /* Assets.xcassets */; };
 		F5CB70CF1FC48AEE004B3A78 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB70CE1FC48AEE004B3A78 /* CardTableViewCell.swift */; };
@@ -28,9 +30,11 @@
 		33DD367AD59495746800A753 /* Pods-gnezdo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gnezdo.release.xcconfig"; path = "Pods/Target Support Files/Pods-gnezdo/Pods-gnezdo.release.xcconfig"; sourceTree = "<group>"; };
 		3CC072193AD4CBE4B40F9297 /* Pods-gnezdo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gnezdo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gnezdo/Pods-gnezdo.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4D26C179D2174B6BB6C8C8 /* Pods_gnezdo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gnezdo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F52ECB521FC6D88800935D3A /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		F532CA091FC432F10017D467 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		F532CA0B1FC43ADF0017D467 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F532CA0D1FC43B210017D467 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		F5496FC91FCB1CB40020FC10 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F5532A5E1FC1F9DA004C66F9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F56E63991FC3E0B200D87D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5CB70CE1FC48AEE004B3A78 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				F5CB70D41FC49D1E004B3A78 /* CardViewController.swift */,
 				F5FB53351FC536160013BE17 /* News.swift */,
 				F5FB53371FC538E40013BE17 /* Card.swift */,
+				F52ECB521FC6D88800935D3A /* ModalViewController.swift */,
+				F5496FC91FCB1CB40020FC10 /* ProfileViewController.swift */,
 			);
 			path = gnezdo;
 			sourceTree = "<group>";
@@ -225,12 +231,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-gnezdo/Pods-gnezdo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Cards/Cards.framework",
+				"${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cards.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeckTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,11 +255,13 @@
 				F5532A5F1FC1F9DA004C66F9 /* SignUpViewController.swift in Sources */,
 				F532CA0E1FC43B210017D467 /* NewsTableViewController.swift in Sources */,
 				F5CB70D31FC49AE5004B3A78 /* UIImageColors.swift in Sources */,
+				F5496FCA1FCB1CB40020FC10 /* ProfileViewController.swift in Sources */,
 				F5EC43EB1FAF81F100C25D20 /* LoginViewController.swift in Sources */,
 				F532CA0A1FC432F10017D467 /* NewsTableViewCell.swift in Sources */,
 				F5FB53361FC536160013BE17 /* News.swift in Sources */,
 				F5FB53381FC538E40013BE17 /* Card.swift in Sources */,
 				F5CB70D11FC48CC8004B3A78 /* CardsTableViewController.swift in Sources */,
+				F52ECB531FC6D88800935D3A /* ModalViewController.swift in Sources */,
 				F5EC43E91FAF81F100C25D20 /* AppDelegate.swift in Sources */,
 				F5CB70D51FC49D1E004B3A78 /* CardViewController.swift in Sources */,
 				F5CB70CF1FC48AEE004B3A78 /* CardTableViewCell.swift in Sources */,

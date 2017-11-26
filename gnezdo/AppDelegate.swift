@@ -17,13 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.rootViewController = UINavigationController(rootViewController: LoginViewController())
-        UINavigationBar.appearance().barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)]
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 0.3961, green: 0.8431, blue: 0.6824, alpha: 1.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 0.3961, green: 0.8431, blue: 0.6824, alpha: 1.0)]
+        UINavigationBar.appearance().isTranslucent = true
+        
+        UITabBar.appearance().isTranslucent = true
         window!.makeKeyAndVisible()
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

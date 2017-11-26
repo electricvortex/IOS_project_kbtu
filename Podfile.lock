@@ -1,15 +1,15 @@
 PODS:
-  - Cards (1.0)
+  - DeckTransition (1.3.3)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
-  - Cards
+  - DeckTransition (~> 1.0)
   - SnapKit (~> 4.0.0)
 
 SPEC CHECKSUMS:
-  Cards: 8a84e68f4d8bbfa1fbd79ec4c22f4b7b71c32fd5
+  DeckTransition: e436b480d5079b958eec4b956476152a4bffea76
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 5eb998b4bdeb9bb6fa02e9cf167c07b650ce4764
+PODFILE CHECKSUM: f8b9215dd23a30ba7094494bc0d19e9db239d173
 
 COCOAPODS: 1.3.1

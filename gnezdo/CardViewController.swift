@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cards
 
 class CardViewController: UIViewController {
 
@@ -22,20 +21,8 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        let card1 = CardHighlight(frame: CGRect(x: 10, y: 30, width: 200 , height: 240))
-//        
-//        card1.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha:1)
-//        card1.icon = UIImage(named: "Yes")
-//        card1.itemTitle = "Hello world"
-//        card1.title = "Hi, Doe!"
-//        card1.textColor = UIColor.white
-//        card1.hasParallax = true
-        
-        self.view.addSubview(card1)
-        
         self.view.addSubview(card)
-        self.view.backgroundColor = UIColor(red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
         
         text.text = "OF"
         circleImg.image = resizeImage(image: UIImage(named: "Circle")!, newWidth: 160.0)

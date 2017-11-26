@@ -11,26 +11,17 @@ import SnapKit
 
 class LoginViewController: UIViewController {
 
-    var projectName: UILabel!
-    var welcomeText: UILabel!
-    var username: UITextField!
-    var password: UITextField!
-    var login: UIButton!
-    var signUpText: UILabel!
-    var signUp: UILabel!
-    var logo: UIImageView!
+    var projectName = UILabel()
+    var welcomeText = UILabel()
+    var username = UITextField()
+    var password = UITextField()
+    var login = UIButton()
+    var signUpText = UILabel()
+    var signUp = UILabel()
+    var logo = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        projectName = UILabel()
-        welcomeText = UILabel()
-        username = UITextField()
-        password = UITextField()
-        login = UIButton()
-        signUp = UILabel()
-        signUpText = UILabel()
-        logo = UIImageView()
-        
         
         self.view.addSubview(projectName)
         projectName.text = "GNEZDO"
@@ -49,7 +40,7 @@ class LoginViewController: UIViewController {
         self.view.addSubview(signUpText)
         self.view.addSubview(logo)
         
-        //logo.image = UIImage(named: "logo")
+        logo.image = UIImage(named: "logo")
         
         welcomeText.text = "Welcome"
         welcomeText.textAlignment = .center
@@ -78,8 +69,10 @@ class LoginViewController: UIViewController {
             make.centerY.equalTo(260)
         }
         
+        
+        login.addTarget(self, action: #selector(goIn), for: .touchUpInside)
         login.setTitle("Login", for: .normal)
-        login.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1.0), for: .normal)
+        login.setTitleColor(UIColor(red: 0.9451, green: 0.9451, blue: 0.9451, alpha: 1.0), for: .normal)
         login.snp.makeConstraints{ (make) -> Void in
             make.width.equalTo(220)
             make.height.equalTo(35)
@@ -117,50 +110,59 @@ class LoginViewController: UIViewController {
         signUp.isUserInteractionEnabled = true
         signUp.addGestureRecognizer(gestureRecognizer)
         
+        view.backgroundColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
         
-        // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+        projectName.textColor = UIColor(red: 0.3765, green: 0.8275, blue: 0.7412, alpha: 1.0)
         
-        projectName.textColor = UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)
-        
-        welcomeText.textColor = UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)
+        welcomeText.textColor = UIColor(red: 0.3961, green: 0.8431, blue: 0.6824, alpha: 1.0)
         
         username.borderStyle = UITextBorderStyle.roundedRect
         username.layer.cornerRadius = 7
-        username.backgroundColor = UIColor(red: 0.9686, green: 0.9686, blue: 0.9686, alpha: 1.0)
+        username.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
         
         password.borderStyle = UITextBorderStyle.roundedRect
         password.layer.cornerRadius = 7
-        password.backgroundColor = UIColor(red: 0.9686, green: 0.9686, blue: 0.9686, alpha: 1.0)
+        password.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
         
-        login.layer.cornerRadius = 7
-        login.backgroundColor = UIColor(red: 0.9451, green: 0.3176, blue: 0.2353, alpha: 1.0)
         
-        signUpText.textColor = UIColor(red: 0.1412, green: 0.1412, blue: 0.1412, alpha: 1.0)
-        signUp.textColor = UIColor(red: 0.9451, green: 0.3176, blue: 0.2353, alpha: 1.0)
-        
+        signUpText.textColor = UIColor(red: 0.7804, green: 0.7804, blue: 0.8039, alpha: 1.0)
+        signUp.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
     }
 
+    override func viewDidLayoutSubviews() {
+        login.applyGradient()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        
-//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-//    }
 
     @objc func signUpPage(sender: UITapGestureRecognizer) {
-        navigationController?.pushViewController(HomeViewController(), animated: true)
+        navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
     
+    @objc func goIn(_ button: UIButton) {
+        present(UINavigationController(rootViewController: HomeViewController()), animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor.clear
+    }
 }
 
+extension UIView {
+    func applyGradient() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor(red: 112.0/255.0, green: 219.0/255.0, blue: 155.0/255.0, alpha: 1.0).cgColor,
+                           UIColor(red: 86.0/255.0, green: 197.0/255.0, blue: 238.0/255.0, alpha: 1.0).cgColor]   // your colors go here
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.frame = self.layer.bounds
+        gradient.cornerRadius = 7
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+}

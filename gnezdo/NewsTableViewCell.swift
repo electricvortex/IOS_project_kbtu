@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cards
 
 class NewsTableViewCell: UITableViewCell {
     
@@ -27,10 +26,11 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
-        contentView.backgroundColor = UIColor(red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0)
+        contentView.backgroundColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
         contentView.addSubview(bkgrnd)
         
-
+        bkgrnd.layer.cornerRadius = 10
+        bkgrnd.setShadowWithColor(color: .white, opacity: 0.5, offset: CGSize(width: 1, height: 3), radius: 3.6, viewCornerRadius: 5)
         bkgrnd.snp.makeConstraints{ (make) -> Void in
             make.leading.top.equalTo(10)
             make.trailing.bottom.equalTo(-10)
@@ -46,20 +46,13 @@ class NewsTableViewCell: UITableViewCell {
         bkgrnd.addSubview(title)
         bkgrnd.addSubview(date)
 
-        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 2)
-
-        bkgrnd.layer.masksToBounds = false
-        bkgrnd.layer.cornerRadius = 2
-        bkgrnd.layer.shadowOffset = CGSize(width: 0, height: 3)
-        bkgrnd.layer.shadowColor = UIColor.black.cgColor
-        bkgrnd.layer.shadowPath = shadowPath.cgPath
-
         imgPic.snp.makeConstraints{ (make) -> Void in
             make.leading.equalToSuperview().offset(7)
             make.size.equalTo(100)
             make.centerY.equalToSuperview()
         }
-
+        imgPic.layer.cornerRadius = 10
+        
         title.snp.makeConstraints{ (make) -> Void in
             make.leading.equalTo(imgPic.snp.trailing).offset(7)
             make.trailing.equalToSuperview().offset(-7)
@@ -84,4 +77,24 @@ class NewsTableViewCell: UITableViewCell {
         self.date.text = d
     }
     
+}
+
+
+extension UIView {
+    /**
+     Set a shadow on a UIView.
+     - parameters:
+     - color: Shadow color, defaults to black
+     - opacity: Shadow opacity, defaults to 1.0
+     - offset: Shadow offset, defaults to zero
+     - radius: Shadow radius, defaults to 0
+     - viewCornerRadius: If the UIView has a corner radius this must be set to match
+     */
+    func setShadowWithColor(color: UIColor?, opacity: Float?, offset: CGSize?, radius: CGFloat, viewCornerRadius: CGFloat?) {
+        //layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: viewCornerRadius ?? 0.0).CGPath
+        layer.shadowColor = color?.cgColor ?? UIColor.black.cgColor
+        layer.shadowOpacity = opacity ?? 1.0
+        layer.shadowOffset = offset ?? CGSize.zero
+        layer.shadowRadius = radius ?? 0
+    }
 }

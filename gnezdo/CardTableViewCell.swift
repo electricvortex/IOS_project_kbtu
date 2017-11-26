@@ -26,7 +26,7 @@ class CardTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
-        contentView.backgroundColor = UIColor(red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0)
+        contentView.backgroundColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
         contentView.addSubview(bkgrnd)
         
         bkgrnd.snp.makeConstraints{ (make) -> Void in
