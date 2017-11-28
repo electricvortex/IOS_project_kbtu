@@ -99,6 +99,8 @@ class LoginViewController: UIViewController {
             make.centerY.equalTo(365)
         }
         
+        logo.layer.masksToBounds = true
+        logo.layer.cornerRadius = 25
         logo.snp.makeConstraints{ (make) -> Void in
             make.width.equalTo(120)
             make.height.equalTo(120)
@@ -142,7 +144,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc func goIn(_ button: UIButton) {
-        present(UINavigationController(rootViewController: HomeViewController()), animated: true, completion: nil)
+        present(HomeViewController(), animated: true, completion: nil)
+        //present(UINavigationController(rootViewController: HomeViewController()), animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,7 +163,7 @@ extension UIView {
         gradient.colors = [UIColor(red: 112.0/255.0, green: 219.0/255.0, blue: 155.0/255.0, alpha: 1.0).cgColor,
                            UIColor(red: 86.0/255.0, green: 197.0/255.0, blue: 238.0/255.0, alpha: 1.0).cgColor]   // your colors go here
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0.5)
         gradient.frame = self.layer.bounds
         gradient.cornerRadius = 7
         self.layer.insertSublayer(gradient, at: 0)

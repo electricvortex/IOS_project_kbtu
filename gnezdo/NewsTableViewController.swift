@@ -20,8 +20,22 @@ class NewsTableViewController: UITableViewController {
         self.tableView.backgroundColor = UIColor(red: 0.2196, green: 0.2588, blue: 0.3255, alpha: 1.0)
         self.tableView.tableHeaderView = nil
         self.tableView.dataSource = self
+        
+        
+        let profileBtn = UIButton(type: .custom)
+        //profileBtn.setTitle("Hello", for: .normal)
+        profileBtn.setImage(UIImage(named: "profile"), for: .normal)
+        profileBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        profileBtn.addTarget(self, action: #selector(profilePage), for: .touchUpInside)
+        let item1 = UIBarButtonItem(customView: profileBtn)
+        
+        self.navigationItem.setRightBarButtonItems([item1], animated: true)
     }
     
+    @objc func profilePage(sender: UITapGestureRecognizer) {
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,6 +76,4 @@ class NewsTableViewController: UITableViewController {
         self.present(modalViewController, animated: true, completion: nil)
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
 }

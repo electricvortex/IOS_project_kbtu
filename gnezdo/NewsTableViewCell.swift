@@ -46,12 +46,13 @@ class NewsTableViewCell: UITableViewCell {
         bkgrnd.addSubview(title)
         bkgrnd.addSubview(date)
 
+        imgPic.layer.masksToBounds = true
+        imgPic.layer.cornerRadius = 10
         imgPic.snp.makeConstraints{ (make) -> Void in
             make.leading.equalToSuperview().offset(7)
             make.size.equalTo(100)
             make.centerY.equalToSuperview()
         }
-        imgPic.layer.cornerRadius = 10
         
         title.snp.makeConstraints{ (make) -> Void in
             make.leading.equalTo(imgPic.snp.trailing).offset(7)
